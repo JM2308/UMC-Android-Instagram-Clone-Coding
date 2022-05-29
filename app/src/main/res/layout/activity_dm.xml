@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
-        android:id="@+id/notice_back_btn"
+        android:id="@+id/dm_back_btn"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/back"
@@ -16,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/notice_title_text"
+        android:id="@+id/dm_user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="example_ID"
@@ -24,8 +25,92 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_marginLeft="25dp"
-        app:layout_constraintTop_toTopOf="@id/notice_back_btn"
-        app:layout_constraintStart_toEndOf="@id/notice_back_btn"
-        app:layout_constraintBottom_toBottomOf="@id/notice_back_btn" />
+        app:layout_constraintTop_toTopOf="@id/dm_back_btn"
+        app:layout_constraintStart_toEndOf="@id/dm_back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/dm_back_btn" />
+
+    <ImageButton
+        android:id="@+id/dm_add_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/dm_add"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toTopOf="@id/dm_user_id"
+        app:layout_constraintBottom_toBottomOf="@id/dm_user_id"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/dm_call_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/dm_call"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toTopOf="@id/dm_user_id"
+        app:layout_constraintBottom_toBottomOf="@id/dm_user_id"
+        app:layout_constraintEnd_toStartOf="@id/dm_add_btn" />
+
+    <LinearLayout
+        android:id="@+id/dm_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="@drawable/search_background"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dm_user_id">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/search_icon"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textSize="15sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dm_friend_status"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:text="친구들 상태"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dm_search" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메시지"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dm_friend_status"/>
+
+    <TextView
+        android:id="@+id/dm_request_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="요청"
+        android:textSize="15sp"
+        android:textColor="@color/primary_blue"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dm_friend_status" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
