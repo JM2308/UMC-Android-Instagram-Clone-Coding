@@ -2,27 +2,16 @@ package com.example.umc_android_instagram_clone_coding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD
 import android.view.WindowManager
 import com.example.umc_android_instagram_clone_coding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-=======
-import com.example.umc_android_instagram_clone_coding.databinding.ActivityMainBinding
-
-class MainActivity : AppCompatActivity() {
->>>>>>> 0e7f7785e46f4e8a1ea4073d47e9aa9ca731b42f
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-<<<<<<< HEAD
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-
-        setContentView(R.layout.activity_main)
-=======
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -69,6 +58,5 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
->>>>>>> 0e7f7785e46f4e8a1ea4073d47e9aa9ca731b42f
     }
 }

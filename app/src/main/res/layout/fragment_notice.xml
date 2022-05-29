@@ -28,7 +28,6 @@
         app:layout_constraintStart_toEndOf="@id/notice_back_btn"
         app:layout_constraintBottom_toBottomOf="@id/notice_back_btn" />
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/notice_check_follow"
         android:layout_width="match_parent"
