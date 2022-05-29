@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_notice.xml" value="0.15555555555555556" />
@@ -10,6 +11,23 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+=======
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/home_selector.xml" value="0.17" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/info_selector.xml" value="0.167" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/search_selector.xml" value="0.152" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_home.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_info.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_reels.xml" value="0.1" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_shop.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/menu/bottom_navi_menu.xml" value="0.264" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/menu/home_selector.xml" value="0.24947916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+>>>>>>> 0e7f7785e46f4e8a1ea4073d47e9aa9ca731b42f
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

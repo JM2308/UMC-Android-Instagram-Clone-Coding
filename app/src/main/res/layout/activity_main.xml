@@ -36,9 +36,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
     <FrameLayout
+<<<<<<< HEAD
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,3 +50,28 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 -->
+=======
+        android:id="@+id/main_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bottom_navi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_bottom_navi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemIconSize="28dp"
+        app:itemIconTint="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:itemRippleColor="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navi_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 0e7f7785e46f4e8a1ea4073d47e9aa9ca731b42f
