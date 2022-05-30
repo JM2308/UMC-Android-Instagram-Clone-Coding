@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <ImageView
+        android:id="@+id/item_dm_list_story"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/dm_check_story"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/item_dm_list_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/profile"
+        app:layout_constraintTop_toTopOf="@id/item_dm_list_story"
+        app:layout_constraintBottom_toBottomOf="@id/item_dm_list_story"
+        app:layout_constraintStart_toStartOf="@id/item_dm_list_story"
+        app:layout_constraintEnd_toEndOf="@id/item_dm_list_story" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/item_dm_list_profile"
+        app:layout_constraintTop_toTopOf="@id/item_dm_list_profile"
+        app:layout_constraintBottom_toBottomOf="@id/item_dm_list_profile">
+
+        <TextView
+            android:id="@+id/item_dm_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+            android:id="@+id/itme_dm_list_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최근 활동 : 오늘"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="15dp" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/item_dm_list_camera"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:background="@drawable/camera"
+        app:layout_constraintTop_toTopOf="@id/item_dm_list_profile"
+        app:layout_constraintBottom_toBottomOf="@id/item_dm_list_profile"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
