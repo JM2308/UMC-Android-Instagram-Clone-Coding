@@ -12,7 +12,7 @@
         android:id="@+id/item_dm_list_story"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/dm_check_story"
+        android:background="@drawable/check_story"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

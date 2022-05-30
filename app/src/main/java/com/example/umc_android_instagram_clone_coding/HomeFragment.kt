@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,6 +26,7 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
 
     lateinit var binding : FragmentHomeBinding
+    private var storyDatas= ArrayList<HomeStoryData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,21 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        // story에 들어갈 데이터와 RV 연결하기 위한 Adapter 적용
+        val storyAdapter = HomeStoryRVAdapter(storyDatas)
+        binding.homeStoryRv.adapter = storyAdapter
+        binding.homeStoryRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        // storyDatas에 넣을 data 담아주는 작업
+        storyDatas.apply {
+            add(HomeStoryData("내 스토리", R.drawable.profile, 0))
+            add(HomeStoryData("example1", R.drawable.profile, 1))
+            add(HomeStoryData("example2", R.drawable.profile, 1))
+            add(HomeStoryData("example3", R.drawable.profile, 1))
+            add(HomeStoryData("example4", R.drawable.profile, -1))
+            add(HomeStoryData("example5", R.drawable.profile, -1))
+        }
 
         binding.homeHeartBtn.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
