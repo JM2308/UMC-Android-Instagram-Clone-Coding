@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeBinding
 
@@ -26,7 +27,8 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
 
     lateinit var binding : FragmentHomeBinding
-    private var storyDatas= ArrayList<HomeStoryData>()
+    private var storyDatas = ArrayList<HomeStoryData>()
+    private var postDatas = ArrayList<PostContentItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +60,27 @@ class HomeFragment : Fragment() {
             add(HomeStoryData("example4", R.drawable.profile, -1))
             add(HomeStoryData("example5", R.drawable.profile, -1))
         }
+        
+        // post에 들어갈 데이터와 RV 연결하기 위한 Adapter 적용
+        val postAdapter = PostContentRVAdapter(postDatas)
+        binding.homePostRv.adapter = postAdapter
+        binding.homePostRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        
+        // postDatas에 넣을 data 담아주는 작업
+        postDatas.apply {
+            add(PostContentItem(R.drawable.profile, "exampleID1", R.color.black, "1", "exampleID content~~",
+            "1", "1일 전", 1))
+            add(PostContentItem(R.drawable.profile, "exampleID2", R.color.black, "2", "exampleID content~~",
+                "2", "2일 전", 1))
+            add(PostContentItem(R.drawable.profile, "exampleID3", R.color.black, "3", "exampleID content~~",
+                "3", "3일 전", 1))
+            add(PostContentItem(R.drawable.profile, "exampleID4", R.color.black, "4", "exampleID content~~",
+                "4", "4일 전", 0))
+            add(PostContentItem(R.drawable.profile, "exampleID5", R.color.black, "5", "exampleID content~~",
+                "5", "5일 전", 0))
+        }
 
+        /*
         binding.homeHeartBtn.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.main_fl, NoticeFragment()).commitAllowingStateLoss()
@@ -67,6 +89,7 @@ class HomeFragment : Fragment() {
         binding.homeDmBtn.setOnClickListener {
             startActivity(Intent(activity, DMActivity::class.java))
         }
+         */
 
         return binding.root
     }
