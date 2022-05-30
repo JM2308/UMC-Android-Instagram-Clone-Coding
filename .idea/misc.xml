@@ -4,11 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/home_selector.xml" value="0.17" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/info_arrow_down.xml" value="0.309" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/info_selector.xml" value="0.167" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/search_selector.xml" value="0.152" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_home.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_info.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_info.xml" value="0.5" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_reels.xml" value="0.1" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_shop.xml" value="0.24947916666666667" />
