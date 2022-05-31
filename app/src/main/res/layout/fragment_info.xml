@@ -49,7 +49,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/info_name_tv"
+                android:id="@+id/info_id_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="user_name"
@@ -65,17 +65,162 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="3dp"
                 android:src="@drawable/info_arrow_down"
-                app:layout_constraintBottom_toBottomOf="@+id/info_name_tv"
-                app:layout_constraintStart_toEndOf="@+id/info_name_tv"
-                app:layout_constraintTop_toTopOf="@+id/info_name_tv" />
+                app:layout_constraintBottom_toBottomOf="@+id/info_id_tv"
+                app:layout_constraintStart_toEndOf="@+id/info_id_tv"
+                app:layout_constraintTop_toTopOf="@+id/info_id_tv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <View
+        android:id="@+id/info_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#D3D3D3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/info_tool_bar" />
+
+    <ImageView
+        android:id="@+id/info_profile_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_tool_bar" />
+
+    <TextView
+        android:id="@+id/info_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="name"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/info_profile_iv"
+        app:layout_constraintTop_toBottomOf="@+id/info_profile_iv" />
+
+    <TextView
+        android:id="@+id/info_intro_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="introduce"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/info_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/info_name_tv" />
+
+    <TextView
+        android:id="@+id/info_web_site_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="www.naver.com"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/info_intro_tv"
+        app:layout_constraintTop_toBottomOf="@+id/info_intro_tv" />
+
+    <TextView
+        android:id="@+id/info_number_of_posts_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="75dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/info_profile_iv"
+        app:layout_constraintEnd_toStartOf="@+id/info_number_of_follower_tv"
+        app:layout_constraintTop_toTopOf="@id/info_profile_iv" />
+
+    <TextView
+        android:id="@+id/info_posts_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="게시물"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/info_number_of_posts_tv"
+        app:layout_constraintStart_toStartOf="@+id/info_number_of_posts_tv"
+        app:layout_constraintTop_toBottomOf="@+id/info_number_of_posts_tv" />
+
+    <TextView
+        android:id="@+id/info_number_of_follower_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="75dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/info_profile_iv"
+        app:layout_constraintEnd_toStartOf="@+id/info_number_of_following_tv"
+        app:layout_constraintTop_toTopOf="@id/info_profile_iv" />
+
+    <TextView
+        android:id="@+id/info_follower_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="팔로워"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/info_number_of_follower_tv"
+        app:layout_constraintStart_toStartOf="@+id/info_number_of_follower_tv"
+        app:layout_constraintTop_toBottomOf="@+id/info_number_of_follower_tv" />
+
+    <TextView
+        android:id="@+id/info_number_of_following_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="50dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/info_profile_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/info_profile_iv" />
+
+    <TextView
+        android:id="@+id/info_following_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="팔로잉"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/info_number_of_following_tv"
+        app:layout_constraintStart_toStartOf="@+id/info_number_of_following_tv"
+        app:layout_constraintTop_toBottomOf="@+id/info_number_of_following_tv" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_name_tv">
+
+        <android.widget.Button
+            android:id="@+id/info_edit_profile_bt"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="9"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/edit_profile"
+            android:background="@drawable/info_profile_edit_button_shape"/>
+
+        <android.widget.Button
+            android:id="@+id/info_look_people_bt"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:background="@drawable/info_look_people_button_shape"
+            android:drawableStart="@drawable/info_person_add"/>
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
