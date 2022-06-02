@@ -223,6 +223,7 @@
             android:paddingEnd="2dp" />
     </LinearLayout>
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/info_tb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -242,5 +243,14 @@
             android:layout_height="wrap_content"
             android:icon="@drawable/info_tag_tab" />
     </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/info_vp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_tb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
