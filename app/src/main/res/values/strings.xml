@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">UMC-Android-Instagram-Clone-Coding</string>
     <string name="edit_profile">프로필 편집</string>
+    <string name="info_post_title">프로필</string>
+    <string name="info_post_describe">사진과 동영상을 공유하면 프로필에\n표시됩니다.</string>
+    <string name="info_post_update">첫 사진/동영상을 공유해보세요</string>
+    <string name="info_tag_title">회원님이 나온 사진 및 동영상</string>
+    <string name="info_tag_describe">사람들이 회원님을 사진 및 동영상에 태그하면\n태그된 사진 및 동영상이 여기에 표시됩니다.</string>
+
 </resources>
