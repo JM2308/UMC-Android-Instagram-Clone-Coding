@@ -73,44 +73,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="검색"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/dm_friend_status"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dm_friend_rv"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="15dp"
-        android:text="친구들 상태"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dm_search" />
+        android:paddingLeft="20dp"
+        android:paddingRight="-3dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/dm_search"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="메시지"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dm_friend_status"/>
+        app:layout_constraintTop_toBottomOf="@id/dm_friend_rv"/>
 
     <TextView
         android:id="@+id/dm_request_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="요청"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textColor="@color/primary_blue"
         android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dm_friend_status" />
+        app:layout_constraintTop_toBottomOf="@id/dm_friend_rv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dm_msg_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/dm_request_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
