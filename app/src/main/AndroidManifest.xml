@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UMCAndroidInstagramCloneCoding">
         <activity
+            android:name=".InfoEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

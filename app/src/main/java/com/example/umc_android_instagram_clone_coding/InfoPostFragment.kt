@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentInfoPostBinding
 
 class InfoPostFragment : Fragment() {
-    lateinit var binding: FragmentInfoPostBinding
-    private var postItems = arrayListOf<PostItem>(
+    private var _binding: FragmentInfoPostBinding? = null
+    private val binding get() = _binding!!
+
+    private var postItems = arrayListOf<PostItem>( // 피드에 들어갈 이미지 리스트
         PostItem(R.drawable.jindol),
         PostItem(R.drawable.jindol),
         PostItem(R.drawable.jindol),
@@ -24,14 +26,23 @@ class InfoPostFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentInfoPostBinding.inflate(inflater, container, false)
+        _binding = FragmentInfoPostBinding.inflate(inflater, container, false)
 
+        connectAdapter()
+
+        return binding.root
+    }
+
+    private fun connectAdapter() {
         val mAdapter = InfoPostRVAdapter(postItems)
         binding.infoPostRv.adapter = mAdapter
 
         val gridLayoutManager = GridLayoutManager(context,3)
         binding.infoPostRv.layoutManager = gridLayoutManager
+    }
 
-        return binding.root
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

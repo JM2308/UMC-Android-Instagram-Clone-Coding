@@ -33,9 +33,9 @@
                 android:layout_height="23dp"
                 android:layout_marginEnd="15dp"
                 android:src="@drawable/info_new_posts"
+                app:layout_constraintBottom_toBottomOf="@id/info_menu_iv"
                 app:layout_constraintEnd_toStartOf="@id/info_menu_iv"
-                app:layout_constraintTop_toTopOf="@id/info_menu_iv"
-                app:layout_constraintBottom_toBottomOf="@id/info_menu_iv"/>
+                app:layout_constraintTop_toTopOf="@id/info_menu_iv" />
 
             <ImageView
                 android:id="@+id/info_lock_iv"
@@ -70,7 +70,7 @@
                 app:layout_constraintTop_toTopOf="@+id/info_id_tv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
-    
+
     <ImageView
         android:id="@+id/info_profile_iv"
         android:layout_width="80dp"
@@ -105,9 +105,9 @@
         android:id="@+id/info_web_site_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="www.naver.com"
-        android:linksClickable="true"
         android:autoLink="web"
+        android:linksClickable="true"
+        android:text="www.naver.com"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/info_intro_tv"
         app:layout_constraintTop_toBottomOf="@+id/info_intro_tv" />
@@ -116,8 +116,8 @@
         android:id="@+id/info_number_of_posts_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
         android:layout_marginEnd="75dp"
+        android:layout_marginBottom="15dp"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -140,8 +140,8 @@
         android:id="@+id/info_number_of_follower_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
         android:layout_marginEnd="75dp"
+        android:layout_marginBottom="15dp"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -164,8 +164,8 @@
         android:id="@+id/info_number_of_following_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginBottom="15dp"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -204,14 +204,26 @@
             android:text="@string/edit_profile" />
 
         <android.widget.Button
-            android:id="@+id/info_look_people_bt"
+            android:id="@+id/info_look_people_non_clicked_bt"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/info_look_people_button_shape"
-            android:drawableStart="@drawable/info_person_add"
-            android:paddingStart="2dp"
-            android:paddingEnd="2dp" />
+            android:drawableStart="@drawable/info_person_add_non_clicked"
+            android:paddingStart="4dp"
+            android:paddingEnd="2dp"
+            android:visibility="visible" />
+
+        <android.widget.Button
+            android:id="@+id/info_look_people_clicked_bt"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/info_look_people_button_shape"
+            android:drawableStart="@drawable/info_person_add_clicked"
+            android:paddingStart="4dp"
+            android:paddingEnd="2dp"
+            android:visibility="gone" />
     </LinearLayout>
 
     <TextView
@@ -243,16 +255,16 @@
         android:layout_marginTop="3dp"
         android:text="좋아하는 스토리를 프로필에 보관해보세요"
         android:textColor="@color/black"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_story_highlight_tv"/>
+        app:layout_constraintTop_toBottomOf="@+id/info_story_highlight_tv" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/info_story_highlight_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:orientation="horizontal"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/info_story_highlight_describe_tv" />
 
     <com.google.android.material.tabs.TabLayout
@@ -263,8 +275,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info_story_highlight_rv"
-        app:tabIconTint="@color/black"
         app:tabIndicatorColor="@color/black">
+
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -277,15 +289,19 @@
             android:icon="@drawable/info_tag_tab" />
     </com.google.android.material.tabs.TabLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="#E8E8E8"
+        app:layout_constraintTop_toBottomOf="@+id/info_tb" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/info_vp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_tb"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/info_tb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
