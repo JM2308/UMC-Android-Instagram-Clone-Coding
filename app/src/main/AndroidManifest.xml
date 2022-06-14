@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UMCAndroidInstagramCloneCoding">
         <activity
-            android:name=".InfoEditActivity"
+            android:name=".Info.InfoEditActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -21,9 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DMActivity"
+        <activity android:name=".Home.DMActivity"
             android:exported="true" />
-        <activity android:name=".WishListActivity"/>
+        <activity android:name=".Shop.WishListActivity"/>
     </application>
 
 </manifest>

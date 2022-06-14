@@ -2,7 +2,11 @@ package com.example.umc_android_instagram_clone_coding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
+import com.example.umc_android_instagram_clone_coding.Home.HomeFragment
+import com.example.umc_android_instagram_clone_coding.Info.InfoFragment
+import com.example.umc_android_instagram_clone_coding.Reels.ReelsFragment
+import com.example.umc_android_instagram_clone_coding.Search.SearchFragment
+import com.example.umc_android_instagram_clone_coding.Shop.ShopFragment
 import com.example.umc_android_instagram_clone_coding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
