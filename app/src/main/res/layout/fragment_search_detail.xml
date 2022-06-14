@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ExtraText">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
+
+    <ImageView
+        android:id="@+id/search_detail_back_iv"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:src="@drawable/arrow_left"
+        android:layout_marginStart="5dp"
+        android:padding="2dp"
+        app:layout_constraintTop_toTopOf="@id/search_detail_search"
+        app:layout_constraintBottom_toBottomOf="@id/search_detail_search"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    /*Search Bar*/
+    <LinearLayout
+        android:id="@+id/search_detail_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="@drawable/search_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintStart_toEndOf="@id/search_detail_back_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/search"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textSize="15sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/search_detail_content_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabSelectedTextColor="#3C3A3A"
+        app:tabIndicatorColor="#3C3A3A"
+        app:tabRippleColor="#00ff0000"
+        app:layout_constraintTop_toBottomOf="@id/search_detail_search"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/search_detail_content_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/search_detail_content_tb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

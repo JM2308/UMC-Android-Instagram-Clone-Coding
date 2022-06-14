@@ -5,55 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.umc_android_instagram_clone_coding.databinding.FragmentSearchBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SearchFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentSearchBinding
+    private var searchDatas = ArrayList<Search>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
-    }
+        binding =  FragmentSearchBinding.inflate(inflater,container,false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SearchFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        /* 클릭이벤트 */
+        binding.searchSearchLinearlayout.setOnClickListener {
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.search_frm,SearchDetailFragment()).commitAllowingStateLoss()
+        }
+
+        // 데이터 리스트 생성 더미 데이터 (arraylist에 담길 데이터)
+        searchDatas.apply {
+            add(Search(R.drawable.img_search1))
+            add(Search(R.drawable.img_search2))
+            add(Search(R.drawable.img_search3))
+            add(Search(R.drawable.img_search4))
+            add(Search(R.drawable.img_search5))
+            add(Search(R.drawable.img_search6))
+            add(Search(R.drawable.img_search7))
+            add(Search(R.drawable.img_search8))
+            add(Search(R.drawable.img_search9))
+            add(Search(R.drawable.img_search10))
+        }
+
+        val searchRVAdapter = SearchRVAdapter(searchDatas) // 더미데이터랑 Adapter 연결
+        binding.searchRv.adapter = searchRVAdapter // 리사이클러뷰에 어댑터를 연결
+        binding.searchRv.layoutManager = GridLayoutManager(context, 3)
+        
+        return binding.root
     }
 }
