@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".DMActivity"
             android:exported="true" />
+        <activity android:name=".WishListActivity"/>
     </application>
 
 </manifest>

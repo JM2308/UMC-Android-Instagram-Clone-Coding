@@ -1,59 +1,46 @@
 package com.example.umc_android_instagram_clone_coding
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.umc_android_instagram_clone_coding.databinding.FragmentShopBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ShopFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ShopFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentShopBinding
+    private var shopDatas = ArrayList<Shop>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ShopFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ShopFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    ): View? {
+        binding = FragmentShopBinding.inflate(inflater, container, false)
+
+        /* 클릭시 위시리시트로 전환 */
+        binding.shopWishlistKeepIv.setOnClickListener {
+            startActivity(Intent(activity, WishListActivity::class.java))
+        }
+
+        // 데이터 리스트 생성 더미 데이터 (arraylist에 담길 데이터)
+        shopDatas.apply {
+            add(Shop(R.drawable.img_shop1))
+            add(Shop(R.drawable.img_shop2))
+            add(Shop(R.drawable.img_shop3))
+            add(Shop(R.drawable.img_shop4))
+            add(Shop(R.drawable.img_shop5))
+            add(Shop(R.drawable.img_shop6))
+            add(Shop(R.drawable.img_shop7))
+        }
+
+        val shopRVAdapter = ShopRVAdapter(shopDatas) // 더미데이터랑 Adapter 연결
+        binding.shopRv.adapter = shopRVAdapter // 리사이클러뷰에 어댑터를 연결
+        binding.shopRv.layoutManager = GridLayoutManager(context, 2)
+        return binding.root
     }
 }
