@@ -3,11 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ReelsFragment">
 
-    <TextView
+    //리사이클러뷰
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reels_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="reels" />
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        tools:listitem="@layout/item_reels"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <TextView
+        android:id="@+id/reels_reels_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:text="Reels"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/reels_camera_iv"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/camera_white"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/reels_reels_tv"
+        app:layout_constraintBottom_toBottomOf="@id/reels_reels_tv"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
