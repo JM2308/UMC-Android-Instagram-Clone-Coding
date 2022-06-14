@@ -5,55 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import com.example.umc_android_instagram_clone_coding.databinding.FragmentReelsBinding
+import com.google.gson.Gson
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReelsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ReelsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentReelsBinding
+    private var reelsDatas = ArrayList<Reels>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reels, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReelsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReelsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    ): View? {
+
+        binding = FragmentReelsBinding.inflate(inflater,container,false)
+
+        // 데이터 리스트 생성 더미 데이터 (arraylist에 담길 데이터)
+        reelsDatas.apply {
+            add(Reels("umc_makeuschallege","디자이너 절찬 모집중!! 많은 지원 바랍니다(5/25 ~ 6/9)", R.drawable.umc))
+            add(Reels("nah25_01","잠수오리", R.drawable.info))
+            add(Reels("jimmmminin__00","루나 뭐해요 보고싶어요", R.drawable.info))
+            add(Reels("seung__hee_","시험 잘 봤어요? 과탑 기대하고 있을게요 해리", R.drawable.info))
+        }
+
+        val reelsRVAdapter = ReelsRVAdapter(reelsDatas) // 더미데이터랑 Adapter 연결
+        binding.reelsRv.adapter = reelsRVAdapter // 리사이클러뷰에 어댑터를 연결
+        binding.reelsRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false) //레이아웃 매니저 설정
+
+        val snap = PagerSnapHelper()
+        snap.attachToRecyclerView(binding.reelsRv)
+
+        binding.reelsRv.apply {
+            layoutManager = layoutManager
+            adapter = reelsRVAdapter
+        }
+
+        return binding.root
     }
 }

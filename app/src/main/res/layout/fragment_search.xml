@@ -3,10 +3,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SearchFragment">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/search_frm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="search" />
+        android:layout_height="match_parent"/>
+
+    /*Search Bar*/
+    <LinearLayout
+        android:id="@+id/search_search_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="@drawable/search_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/search"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"/>
+
+<!--        <EditText-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="검색"-->
+<!--            android:textSize="15sp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginLeft="15dp"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textSize="17sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:src="@drawable/map3"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@id/search_search_linearlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_search_linearlayout"
+        app:layout_constraintBottom_toBottomOf="@id/search_search_linearlayout"/>
+
+    /*리사이클러뷰*/
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        tools:listitem="@layout/item_search"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_search_linearlayout"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

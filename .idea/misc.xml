@@ -3,17 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/home_selector.xml" value="0.17" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/info_selector.xml" value="0.167" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/search_selector.xml" value="0.152" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_home.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_info.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_reels.xml" value="0.1" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_shop.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/menu/bottom_navi_menu.xml" value="0.264" />
-        <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/menu/home_selector.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/info_selector.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/rounded_corner.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/rounded_corner_gray.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/rounded_corner_transparent_white.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/search_background.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/search_selector.xml" value="0.1235" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable/square_mold.xml" value="0.169" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_wish_list.xml" value="0.264" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_wishlist.xml" value="0.2" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_info.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_reels.xml" value="0.264" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search.xml" value="0.2" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search_account.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search_audio.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search_best.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search_detail.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search_place.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_search_tag.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/fragment_shop.xml" value="0.2" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/item_reels.xml" value="0.264" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/item_search.xml" value="0.1" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/item_shop.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hedgh/UMC-Android-Instagram-Clone-Coding/app/src/main/res/menu/bottom_navi_menu.xml" value="0.2" />
       </map>
     </option>
   </component>
