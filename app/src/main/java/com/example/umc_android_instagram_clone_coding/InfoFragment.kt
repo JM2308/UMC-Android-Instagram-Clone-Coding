@@ -18,7 +18,7 @@ class InfoFragment : Fragment() {
         R.drawable.info_feed_tab,
         R.drawable.info_tag_tab
     )
-
+//misc 충돌 에러
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
