@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="23dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/home_status_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/home_status_online"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/status_on"
+        app:layout_constraintBottom_toBottomOf="@id/home_status_profile"
+        app:layout_constraintEnd_toEndOf="@id/home_status_profile" />
+
+    <TextView
+        android:id="@+id/home_status_id"
+        android:layout_width="60dp"
+        android:layout_height="15dp"
+        android:text="example_ID"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@id/home_status_profile"
+        app:layout_constraintEnd_toEndOf="@id/home_status_profile"
+        app:layout_constraintTop_toBottomOf="@id/home_status_profile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

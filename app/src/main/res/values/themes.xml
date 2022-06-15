@@ -14,6 +14,7 @@
         <!-- 스테이터스 바 글씨 색상 설정-->
         <item name="android:windowLightStatusBar" tools:Api="m">true</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
         <!-- 이부분 추가해주기!! -->
         <!-- Titlebar 제거 부분 -->
         <item name="windowNoTitle">true</item>
