@@ -8,18 +8,18 @@ import com.example.umc_android_instagram_clone_coding.Data.DMMsgListData
 import com.example.umc_android_instagram_clone_coding.Data.FriendStatusData
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
-import com.example.umc_android_instagram_clone_coding.databinding.ActivityDmBinding
+import com.example.umc_android_instagram_clone_coding.databinding.ActivityHomeDmBinding
 
 class DMActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivityDmBinding
+    lateinit var binding : ActivityHomeDmBinding
     private var statusDatas = ArrayList<FriendStatusData>()
     private var msgListDatas = ArrayList<DMMsgListData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityDmBinding.inflate(layoutInflater)
+        binding = ActivityHomeDmBinding.inflate(layoutInflater)
 
         val statusAdapter = FriendStatusRVAdapter(statusDatas)
         binding.dmFriendRv.adapter = statusAdapter

@@ -20,6 +20,20 @@ class InfoPostFragment : Fragment() {
         PostItem(R.drawable.jindol),
         PostItem(R.drawable.jindol),
         PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
+        PostItem(R.drawable.jindol),
         PostItem(R.drawable.jindol)
     )
 
