@@ -22,7 +22,7 @@ class SearchFragment : Fragment() {
 
         /* 클릭이벤트 */
         binding.searchSearchLinearlayout.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.search_frm,SearchDetailFragment()).commitAllowingStateLoss()
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_fl,SearchDetailFragment()).commitAllowingStateLoss()
         }
 
         // 데이터 리스트 생성 더미 데이터 (arraylist에 담길 데이터)

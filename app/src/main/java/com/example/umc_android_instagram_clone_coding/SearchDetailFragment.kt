@@ -22,7 +22,7 @@ class SearchDetailFragment: Fragment() {
 
         /* Fragment 전환 */
         binding.searchDetailBackIv.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.search_frm,SearchFragment()).commitAllowingStateLoss()
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_fl,SearchFragment()).commitAllowingStateLoss()
         }
 
         /* TabLayout, ViewPager 전환 */
