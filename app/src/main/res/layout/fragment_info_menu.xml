@@ -1,135 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/standard_bottom_sheet"
+    style="?attr/bottomSheetStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <LinearLayout
-        android:id="@+id/info_menu_set"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/info_dialog_set" />
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/info_menu_set"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="설정"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/info_menu_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/info_dialog_set" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/info_dialog_history" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="설정"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/info_menu_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="내 활동"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/info_menu_qrcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/info_dialog_history" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/info_dialog_qr" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="내 활동"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/info_menu_qrcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="QR 코드"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/info_menu_saved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/info_dialog_qr" />
 
-        <ImageView
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            android:src="@drawable/info_dialog_saved" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="QR 코드"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/info_menu_saved"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="저장됨"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/info_menu_star"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/info_dialog_saved" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/info_dialog_star" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="저장됨"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/info_menu_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="즐겨찾기"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/info_menu_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/info_dialog_star" />
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="즐겨찾기"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/info_menu_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="로그아웃"
-            android:textColor="#FF1717"
-            android:textSize="15sp" />
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="로그아웃"
+                android:textColor="#FF1717"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>
