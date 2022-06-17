@@ -31,29 +31,31 @@ class LoginActivity : AppCompatActivity() {
 
         callbackManager = CallbackManager.Factory.create()
 
-        binding.loginFacebookBt.setOnClickListener {
+        binding.loginFacebookBt.setOnClickListener { // button clickListener 설정
             facebookLogin()
         }
     }
 
     private fun facebookLogin(){
-        LoginManager.getInstance()
-            .logInWithReadPermissions(this, Arrays.asList("public_profile","email"))
+        LoginManager.getInstance() // LoginManager instance 얻어오기
+            .logInWithReadPermissions(this,
+                Arrays.asList("public_profile","email")) // 권한 설정하기(사용자의 어떤 항목을 조회할 수 있는지)
 
         LoginManager.getInstance()
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult>{
-                override fun onSuccess(result: LoginResult) {
-                    // 로그인 성공시
+                override fun onSuccess(result: LoginResult) {  // 로그인 성공시
+
                     handleFacebookAccessToken(result?.accessToken)
                     // 파이어베이스로 로그인 데이터를 넘겨줌
+
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                    finish() // 로그인에 성공하면 LoginActivity 종료
                 }
 
-                override fun onCancel() {
-
+                override fun onCancel() { // 로그인 취소 시
                 }
 
-                override fun onError(error: FacebookException) {
-
+                override fun onError(error: FacebookException) { // 로그인 에러 시
                 }
             })
     }
@@ -67,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
 
         auth.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "환영합니다!", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
             }
