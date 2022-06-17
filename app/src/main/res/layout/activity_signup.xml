@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/signup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름 및 비밀번호"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border_gray"
+        android:padding="15dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/signup_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/signup_name_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:hint="성명"
+            android:textColor="#707070"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/signup_name_cancel"/>
+
+        <ImageButton
+            android:id="@+id/signup_name_cancel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/text_cancel"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:padding="3dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@id/signup_name_text"
+            app:layout_constraintBottom_toBottomOf="@id/signup_name_text"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border_gray"
+        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/signup_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/signup_pwd_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:hint="비밀번호"
+            android:textColor="#707070"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CheckBox
+        android:id="@+id/signup_remember_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 저장"
+        android:textSize="12sp"
+        android:textColor="#515151"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signup_pwd" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signup_number_connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="계속 진행하여 연락처 동기화하기"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/round_border_blue"
+        android:layout_marginTop="5dp"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/signup_remember_pwd"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signup_number_disconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="연락처를 동기화하지 않고 계속하기"
+        android:textSize="13sp"
+        android:textColor="@color/primary_blue"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:clickable="false"
+        app:layout_constraintTop_toBottomOf="@id/signup_number_connect"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="연락처가 주기적으로 동기화되고 Instagram 서버에 저장되어 친구를\n빠르게 찾고 Instagram 서비스를 개선하는 데 사용됩니다. 연락처를\n삭제하려면 설정으로 이동하여 연결을 해제하세요. 더 알아보기."
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

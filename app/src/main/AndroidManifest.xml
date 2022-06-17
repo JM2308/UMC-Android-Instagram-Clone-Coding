@@ -10,20 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UMCAndroidInstagramCloneCoding">
         <activity
-            android:name=".Info.InfoEditActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Login.SignupSelectActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Login.SignupActivity" />
+        <activity android:name=".Login.SignupBirthdayActivity" />
         <activity android:name=".Home.DMActivity"
             android:exported="true" />
         <activity android:name=".Shop.WishListActivity"/>
+        <activity
+            android:name=".Info.InfoEditActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
