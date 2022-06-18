@@ -1,14 +1,14 @@
 package com.example.umc_android_instagram_clone_coding.Login
 
-import android.R.attr.button
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.core.view.isVisible
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupSelectBinding
 import com.google.android.material.tabs.TabLayout
@@ -17,36 +17,41 @@ import com.google.android.material.tabs.TabLayout
 class SignupSelectActivity: AppCompatActivity() {
 
     lateinit var binding : ActivitySignupSelectBinding
-    lateinit var tab1 : SignupSelectNumberFragment
-    lateinit var tab2 : SignupSelectEmailFragment
+    var tabFlag = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignupSelectBinding.inflate(layoutInflater)
-
-        tab1 = SignupSelectNumberFragment()
-        tab2 = SignupSelectEmailFragment()
-
-        supportFragmentManager.beginTransaction().add(R.id.signup_fl, tab1).commit()
+        // supportFragmentManager.beginTransaction().add(R.id.signup_fl, tab1).commit()
 
         binding.signupSelectTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab?.position) {
                     0 -> {
-                        var selectedFragment: Fragment? = null
-                        selectedFragment = tab1
-                        selectedFragment?.let {
-                            supportFragmentManager.beginTransaction()
-                                .replace(R.id.signup_fl, it).commit()
+                        binding.signupNumberFl.visibility = View.VISIBLE
+                        binding.signupEmailFl.visibility = View.GONE
+                        tabFlag = 0
+
+                        if (binding.signupNumberText.length() != 0) {
+                            binding.selectNextBtn.isClickable = true;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
+                        } else {
+                            binding.selectNextBtn.isClickable = false;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
                         }
                     }
                     1 -> {
-                        var selectedFragment: Fragment? = null
-                        selectedFragment = tab2
-                        selectedFragment?.let {
-                            supportFragmentManager.beginTransaction()
-                                .replace(R.id.signup_fl, it).commit()
+                        binding.signupNumberFl.visibility = View.GONE
+                        binding.signupEmailFl.visibility = View.VISIBLE
+                        tabFlag = 1
+
+                        if (binding.signupEmailText.length() != 0) {
+                            binding.selectNextBtn.isClickable = true;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
+                        } else {
+                            binding.selectNextBtn.isClickable = false;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
                         }
                     }
                 }
@@ -59,8 +64,47 @@ class SignupSelectActivity: AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
                 Log.d("SignupSelect", "Reselected")
             }
-
         })
+
+        binding.signupNumberText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+            override fun afterTextChanged(editable: Editable) {
+                if (editable.isNotEmpty() && tabFlag == 0) {
+                    binding.selectNextBtn.isClickable = true;
+                    binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
+                    binding.signupNumberCancel.isVisible = true;
+                } else {
+                    binding.selectNextBtn.isClickable = false;
+                    binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
+                    binding.signupNumberCancel.isVisible = false;
+                }
+            }
+        })
+
+        binding.signupEmailText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+            override fun afterTextChanged(editable: Editable) {
+                if (editable.isNotEmpty() && tabFlag == 1) {
+                    binding.selectNextBtn.isClickable = true;
+                    binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
+                    binding.signupEmailCancel.isVisible = true;
+                } else {
+                    binding.selectNextBtn.isClickable = false;
+                    binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
+                    binding.signupEmailCancel.isVisible = false;
+                }
+            }
+        })
+
+        binding.signupNumberCancel.setOnClickListener {
+            binding.signupNumberText.setText("")
+        }
+
+        binding.signupEmailCancel.setOnClickListener {
+            binding.signupEmailText.setText("")
+        }
 
         binding.selectNextBtn.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
@@ -68,5 +112,4 @@ class SignupSelectActivity: AppCompatActivity() {
 
         setContentView(binding.root)
     }
-
 }
