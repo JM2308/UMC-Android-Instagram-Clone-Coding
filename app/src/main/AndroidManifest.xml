@@ -20,6 +20,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Login.SignupActivity" />
         <activity android:name=".Login.SignupBirthdayActivity" />
+        <activity android:name=".Login.SignupAgreeActivity" />
+        <activity android:name=".Login.SignupLastCheckActivity" />
         <activity android:name=".Home.DMActivity"
             android:exported="true" />
         <activity android:name=".Shop.WishListActivity"/>

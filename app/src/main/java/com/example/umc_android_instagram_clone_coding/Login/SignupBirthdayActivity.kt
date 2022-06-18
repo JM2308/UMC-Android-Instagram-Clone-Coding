@@ -1,5 +1,6 @@
 package com.example.umc_android_instagram_clone_coding.Login
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,10 @@ class SignupBirthdayActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignupBirthdayBinding.inflate(layoutInflater)
+
+        binding.selectNextBtn.setOnClickListener {
+            startActivity(Intent(this, SignupAgreeActivity::class.java))
+        }
 
         setContentView(binding.root)
     }
