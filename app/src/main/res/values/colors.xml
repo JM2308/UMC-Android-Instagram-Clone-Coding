@@ -10,4 +10,5 @@
     <color name="gray">#D5D5D5</color>
     <color name="primary_blue">#0099FF</color>
     <color name="dark_blue">#31427C</color>
+    <color name="unclick_blue">#B2DFFC</color>
 </resources>

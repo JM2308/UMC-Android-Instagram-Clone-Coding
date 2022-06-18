@@ -23,7 +23,6 @@ class SignupSelectActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignupSelectBinding.inflate(layoutInflater)
-        // supportFragmentManager.beginTransaction().add(R.id.signup_fl, tab1).commit()
 
         binding.signupSelectTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
