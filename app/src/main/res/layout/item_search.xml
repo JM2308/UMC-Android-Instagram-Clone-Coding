@@ -9,12 +9,12 @@
         android:id="@+id/item_search_img_iv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/img_search1"
         app:layout_constraintDimensionRatio="1:1"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_search2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/item_search_icon_iv"
@@ -22,7 +22,18 @@
         android:layout_height="40dp"
         android:padding="10dp"
         android:src="@drawable/carousel"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@id/item_search_img_iv"
         app:layout_constraintTop_toTopOf="@id/item_search_img_iv"/>
+
+    <ImageView
+        android:id="@+id/item_search_reels_icon_iv"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:padding="10dp"
+        android:src="@drawable/reels_white"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/item_search_img_iv"
+        app:layout_constraintBottom_toBottomOf="@id/item_search_img_iv"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

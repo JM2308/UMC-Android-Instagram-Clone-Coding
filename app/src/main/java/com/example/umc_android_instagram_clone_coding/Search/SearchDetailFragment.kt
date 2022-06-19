@@ -1,12 +1,11 @@
-package com.example.umc_android_instagram_clone_coding.Search
+package com.example.umc_android_instagram_clone_coding
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.umc_android_instagram_clone_coding.MainActivity
-import com.example.umc_android_instagram_clone_coding.R
+import com.example.umc_android_instagram_clone_coding.Search.SearchDetailVPAdapter
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentSearchDetailBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -24,7 +23,7 @@ class SearchDetailFragment: Fragment() {
 
         /* Fragment 전환 */
         binding.searchDetailBackIv.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_fl, SearchFragment()).commitAllowingStateLoss()
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_fl,SearchFragment()).commitAllowingStateLoss()
         }
 
         /* TabLayout, ViewPager 전환 */
