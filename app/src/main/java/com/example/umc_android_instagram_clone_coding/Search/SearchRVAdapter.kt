@@ -1,6 +1,7 @@
 package com.example.umc_android_instagram_clone_coding.Search
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umc_android_instagram_clone_coding.Data.Search
@@ -23,6 +24,11 @@ class SearchRVAdapter(private val searchList: ArrayList<Search>): RecyclerView.A
     inner class ViewHolder(val binding: ItemSearchBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(search: Search) {
             binding.itemSearchImgIv.setImageResource(search.searchImg!!)
+
+            if (search.feedstatus == 0) //사진이 여러개인 경우
+                binding.itemSearchIconIv.visibility = View.VISIBLE
+            else if(search.feedstatus == 1) //게시물이 릴스인 경우
+                binding.itemSearchReelsIconIv.visibility = View.VISIBLE
         }
     }
 }

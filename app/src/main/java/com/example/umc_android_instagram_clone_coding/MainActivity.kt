@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.example.umc_android_instagram_clone_coding.Home.HomeFragment
 import com.example.umc_android_instagram_clone_coding.Info.InfoFragment
 import com.example.umc_android_instagram_clone_coding.Reels.ReelsFragment
-import com.example.umc_android_instagram_clone_coding.Search.SearchFragment
 import com.example.umc_android_instagram_clone_coding.Shop.ShopFragment
 import com.example.umc_android_instagram_clone_coding.databinding.ActivityMainBinding
 
@@ -15,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_UMCAndroidInstagramCloneCoding)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

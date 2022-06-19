@@ -11,8 +11,8 @@ class SearchDetailVPAdapter(fragment: Fragment) : FragmentStateAdapter(fragment)
             0 -> SearchBestFragment()
             1 -> SearchAccountFragment()
             2 -> SearchAudioFragment()
-            3 -> SearchPlaceFragment()
-            else -> SearchTagFragment()
+            3 -> SearchTagFragment()
+            else -> SearchPlaceFragment()
         }
     }
 }

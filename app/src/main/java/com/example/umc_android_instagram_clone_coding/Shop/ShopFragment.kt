@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.Shop
+import com.example.umc_android_instagram_clone_coding.LoginActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentShopBinding
 
@@ -26,6 +27,7 @@ class ShopFragment : Fragment() {
         /* 클릭시 위시리시트로 전환 */
         binding.shopWishlistKeepIv.setOnClickListener {
             startActivity(Intent(activity, WishListActivity::class.java))
+//            startActivity(Intent(activity, LoginActivity::class.java))
         }
 
         // 데이터 리스트 생성 더미 데이터 (arraylist에 담길 데이터)
@@ -37,6 +39,7 @@ class ShopFragment : Fragment() {
             add(Shop(R.drawable.img_shop5))
             add(Shop(R.drawable.img_shop6))
             add(Shop(R.drawable.img_shop7))
+            add(Shop(R.drawable.img_shop3))
         }
 
         val shopRVAdapter = ShopRVAdapter(shopDatas) // 더미데이터랑 Adapter 연결
