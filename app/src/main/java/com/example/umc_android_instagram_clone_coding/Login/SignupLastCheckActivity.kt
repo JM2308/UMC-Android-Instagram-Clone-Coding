@@ -3,6 +3,7 @@ package com.example.umc_android_instagram_clone_coding.Login
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupLastCheckBinding
 
@@ -16,6 +17,7 @@ class SignupLastCheckActivity : AppCompatActivity() {
         binding = ActivitySignupLastCheckBinding.inflate(layoutInflater)
 
         binding.signupCheckSignupBtn.setOnClickListener {
+            finishAffinity()
             startActivity(Intent(this, MainActivity::class.java))
         }
 
