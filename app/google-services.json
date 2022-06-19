@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "268637546557",
+    "project_id": "umc-instagram",
+    "storage_bucket": "umc-instagram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268637546557:android:787f52fd3d99fb6389e254",
+        "android_client_info": {
+          "package_name": "com.example.umc_android_instagram_clone_coding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268637546557-u5k0bil9sevhulpi4n83qt9ahs8r6e90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkSpFMsCeegwXvusoDOZ4gxYcYnY7Wrc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268637546557-u5k0bil9sevhulpi4n83qt9ahs8r6e90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
