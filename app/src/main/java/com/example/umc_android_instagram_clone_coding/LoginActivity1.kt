@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 
-import com.example.umc_android_instagram_clone_coding.databinding.ActivityLoginBinding
+import com.example.umc_android_instagram_clone_coding.databinding.ActivityLogin1Binding
 import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
@@ -22,7 +22,7 @@ class LoginActivity1 : AppCompatActivity() {
 
     private lateinit var callbackManager: CallbackManager
     private val binding by lazy {
-        ActivityLoginBinding.inflate(layoutInflater)
+        ActivityLogin1Binding.inflate(layoutInflater)
     }
     private lateinit var auth: FirebaseAuth
 
