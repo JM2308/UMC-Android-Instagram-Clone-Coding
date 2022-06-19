@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.umc_android_instagram_clone_coding.LoginActivity
+import com.example.umc_android_instagram_clone_coding.LoginActivity1
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentInfoMenuBinding
 import com.facebook.AccessToken
 import com.facebook.login.LoginManager
@@ -40,7 +40,7 @@ class InfoMenuFragment : BottomSheetDialogFragment() {
                     FirebaseAuth.getInstance().signOut()
                     LoginManager.getInstance().logOut()
                 }
-                startActivity(Intent(activity, LoginActivity::class.java)) // 로그아웃 시 로그인 화면 이동
+                startActivity(Intent(activity, LoginActivity1::class.java)) // 로그아웃 시 로그인 화면 이동
                 activity?.finish() // 로그아웃시 스택에 있는 메인 액티비티 종료
             }
 

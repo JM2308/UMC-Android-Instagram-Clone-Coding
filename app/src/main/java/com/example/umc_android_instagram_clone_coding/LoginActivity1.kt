@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser
 
 import java.util.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity1 : AppCompatActivity() {
 
     private lateinit var callbackManager: CallbackManager
     private val binding by lazy {
