@@ -7,18 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
-import com.example.umc_android_instagram_clone_coding.databinding.FragmentNoticeBinding
+import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeNoticeBinding
 
 class NoticeFragment : Fragment() {
 
-    lateinit var binding : FragmentNoticeBinding
+    lateinit var binding : FragmentHomeNoticeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNoticeBinding.inflate(inflater, container, false)
+        binding = FragmentHomeNoticeBinding.inflate(inflater, container, false)
 
         binding.noticeBackBtn.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
