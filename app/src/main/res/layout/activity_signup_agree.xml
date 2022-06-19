@@ -37,11 +37,11 @@
         app:layout_constraintTop_toBottomOf="@id/signup_agree_text"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/signup_agree_all_btn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/signup_check"
+        android:background="@drawable/signup_agree_uncheck"
         android:layout_margin="10dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintTop_toTopOf="@id/signup_agree_all"
@@ -81,11 +81,11 @@
         app:layout_constraintTop_toBottomOf="@id/signup_agree_service"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/signup_agree_service_btn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/signup_check"
+        android:background="@drawable/signup_agree_uncheck"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="10dp"
@@ -119,11 +119,11 @@
         app:layout_constraintTop_toBottomOf="@id/signup_agree_data"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/signup_agree_data_btn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/signup_check"
+        android:background="@drawable/signup_agree_uncheck"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="10dp"
@@ -157,11 +157,11 @@
         app:layout_constraintTop_toBottomOf="@id/signup_agree_gps"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/signup_agree_gps_btn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/signup_check"
+        android:background="@drawable/signup_agree_uncheck"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="10dp"
@@ -184,9 +184,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="다음"
-        android:textSize="12sp"
+        android:textSize="13sp"
         android:textColor="@color/white"
-        android:background="@drawable/round_border_blue"
+        android:background="@drawable/round_border_unclick_blue"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="15dp"
