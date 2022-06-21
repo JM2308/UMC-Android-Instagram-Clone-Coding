@@ -35,7 +35,9 @@ class InfoFragment : Fragment() {
 
         connectViewPager()  // 뷰페이저 연결
         editProfileClickEvent()  // 프로필설정 버튼 클릭 이벤트
+        dialogClickEvent()  // 메뉴 클릭 이벤트
     }
+
     private fun connectViewPager() {
         val infoAdapter = InfoVPAdapter(this)
         binding.infoVp.adapter = infoAdapter  // InfoFragment 뷰페이저에 어댑터 연결
@@ -50,7 +52,13 @@ class InfoFragment : Fragment() {
             startActivity(Intent(activity, InfoEditActivity::class.java))
         }
     }
+    private fun dialogClickEvent() {
+        binding.infoMenuIv.setOnClickListener {
+            val bottomSheet = InfoMenuFragment()
+            fragmentManager?.let { it1 -> bottomSheet.show(it1, bottomSheet.tag) }
+        }
 
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
