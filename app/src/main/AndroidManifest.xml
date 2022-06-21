@@ -33,14 +33,10 @@
         </intent-filter>
         </activity>
 
+        <!--ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-->
+
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Info.InfoEditActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity1"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,21 +44,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Home.DMActivity"
+
+        <activity android:name=".LoginActivity"/>
         <activity android:name=".Login.SignupAgreeActivity" />
         <activity android:name=".Login.SignupBirthdayActivity" />
         <activity android:name=".Login.SignupActivity" />
         <activity android:name=".Login.SignupSelectActivity" />
         <activity android:name=".Login.SignupLastCheckActivity" />
-        <activity android:name=".Home.DMActivity"
-            android:exported="true" />
-        <activity android:name=".Shop.WishListActivity" />
 
-        <activity android:name=".Shop.WishListActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Info.InfoEditActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".Home.DMActivity"
+            android:exported="true" />
+        <activity android:name=".Shop.WishListActivity" />
+
     </application>
 
 </manifest>
