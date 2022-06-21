@@ -9,9 +9,12 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupSelectBinding
 import com.google.android.material.tabs.TabLayout
+
+import com.google.firebase.auth.FirebaseAuth
 
 
 class SignupSelectActivity: AppCompatActivity() {
