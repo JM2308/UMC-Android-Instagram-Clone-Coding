@@ -43,10 +43,9 @@ class SearchFragment : Fragment() {
             add(Search(R.drawable.img_search10,0))
         }
 
-        val searchRVAdapter = SearchRVAdapter(searchDatas) // 더미데이터랑 Adapter 연결
-        binding.searchRv.adapter = searchRVAdapter // 리사이클러뷰에 어댑터를 연결
-//        binding.searchRv.layoutManager = GridLayoutManager(context, 3)
-        binding.searchRv.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+        val searchRVAdapter = SearchRVAdapter(searchDatas)
+        binding.searchRv.adapter = searchRVAdapter
+        binding.searchRv.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
         
         return binding.root
     }

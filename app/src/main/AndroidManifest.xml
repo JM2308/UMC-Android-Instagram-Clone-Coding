@@ -60,6 +60,7 @@
             android:name=".Info.InfoEditActivity"
             android:exported="false" />
 
+        <activity android:name=".Home.PostSelectImgActivity" />
         <activity
             android:name=".Home.DMActivity"
             android:exported="true" />
