@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_login.xml" value="0.4132231404958678" />
+        <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_signup_agree.xml" value="0.1" />
+        <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_signup_birthday.xml" value="0.1" />
+        <entry key="..\:/Users/jimin/git/UMC-Android-Instagram-Clone-Coding/app/src/main/res/layout/activity_signup_last_check.xml" value="0.1" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable-hdpi/info_look_people_clicked_button_shape.xml" value="0.19" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable-mdpi/info_look_people_button_shape.xml" value="0.309" />
         <entry key="..\:/Users/lsh92/AndroidStudioProjects/UMC-Android-Instagram-Clone-Coding/app/src/main/res/drawable-xxxhdpi/info_profile_edit_button_pressed_shape.xml" value="0.19" />

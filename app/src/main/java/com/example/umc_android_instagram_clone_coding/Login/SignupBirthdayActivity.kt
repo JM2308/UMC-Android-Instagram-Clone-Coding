@@ -22,7 +22,18 @@ class SignupBirthdayActivity: AppCompatActivity() {
         setDatePicker()
 
         binding.selectNextBtn.setOnClickListener {
-            startActivity(Intent(this, SignupAgreeActivity::class.java))
+            val number = intent.getStringExtra("number")
+            val email = intent.getStringExtra("email")
+            val name = intent.getStringExtra("name")
+            val pwd = intent.getStringExtra("pwd")
+
+            val intent = Intent(this, SignupAgreeActivity::class.java)
+            intent.putExtra("number", number)
+            intent.putExtra("email", email)
+            intent.putExtra("name", name)
+            intent.putExtra("pwd", pwd)
+
+            startActivity(intent)
         }
 
         setContentView(binding.root)

@@ -38,11 +38,15 @@ class LoginActivity : AppCompatActivity() {
         binding.loginFacebookLoginBt.setOnClickListener { // button clickListener 설정
             facebookLogin()
         }
+
+        binding.loginSignupTv.setOnClickListener {
+            startActivity(Intent(this, SignupSelectActivity::class.java))
+        }
     }
 
     override fun onStart() {
         super.onStart()
-        moveMainPage(auth.currentUser)
+        // moveMainPage(auth.currentUser)
     }
 
     private fun facebookLogin(){
@@ -50,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
             .logInWithReadPermissions(this,
                 Arrays.asList("public_profile", "email")) // 권한 설정하기(사용자의 어떤 항목을 조회할 수 있는지)
 
+        Log.d("loginactivity123", "1")
         LoginManager.getInstance()
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult>{
                 override fun onSuccess(result: LoginResult) {  // 로그인 성공시
@@ -57,15 +62,17 @@ class LoginActivity : AppCompatActivity() {
                     handleFacebookAccessToken(result?.accessToken)
                     // 파이어베이스로 로그인 데이터를 넘겨줌
 
+                    Log.d("loginactivity123", "2")
                     startActivity(Intent(applicationContext, SignupSelectActivity::class.java))
                     finish() // 로그인에 성공하면 LoginActivity 종료
-
                 }
 
                 override fun onCancel() { // 로그인 취소 시
+                    Log.d("loginactivity123", "3")
                 }
 
                 override fun onError(error: FacebookException) { // 로그인 에러 시
+                    Log.d("loginactivity123", "4")
                 }
             })
     }

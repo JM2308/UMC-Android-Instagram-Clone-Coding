@@ -6,7 +6,7 @@
     <string name="info_post_update">첫 사진/동영상을 공유해보세요</string>
     <string name="info_tag_title">회원님이 나온 사진 및 동영상</string>
     <string name="info_tag_describe">사람들이 회원님을 사진 및 동영상에 태그하면\n태그된 사진 및 동영상이 여기에 표시됩니다.</string>
-    <string name="facebook_app_id">1077940802934964</string>
-    <string name="fb_login_protocol_scheme">fb1077940802934964</string>
-    <string name="facebook_client_token">84edc1069dfc7968cefe0cdab080e374</string>
+    <string name="facebook_app_id">759744195374007</string>
+    <string name="fb_login_protocol_scheme">fb759744195374007</string>
+    <string name="facebook_client_token">b2308e69849f5cc1481c82ed5bd39f9c</string>
 </resources>

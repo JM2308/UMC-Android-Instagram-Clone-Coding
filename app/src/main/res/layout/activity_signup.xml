@@ -113,6 +113,7 @@
         android:background="@drawable/round_border_unclick_blue"
         android:layout_marginTop="5dp"
         android:padding="12dp"
+        android:clickable="false"
         app:layout_constraintTop_toBottomOf="@id/signup_remember_pwd"
         app:layout_constraintStart_toStartOf="parent" />
 
