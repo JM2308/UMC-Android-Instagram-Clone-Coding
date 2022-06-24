@@ -12,6 +12,7 @@ import com.facebook.login.LoginManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.ktx.Firebase
 
 
 class InfoMenuFragment : BottomSheetDialogFragment() {
@@ -31,18 +32,10 @@ class InfoMenuFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.infoMenuLogout.setOnClickListener {  // 로그아웃 프로세스
-            val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
-            val accessToken: AccessToken? = AccessToken.getCurrentAccessToken()
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(activity, LoginActivity::class.java)) // 로그아웃 시 로그인 화면 이동
+            activity?.finish() // 로그아웃시 스택에 있는 메인 액티비티 종료
 
-            if(user!=null){
-                val isLoggedIn:Boolean = accessToken != null && !accessToken.isExpired
-                if (isLoggedIn){
-                    FirebaseAuth.getInstance().signOut()
-                    LoginManager.getInstance().logOut()
-                }
-                startActivity(Intent(activity, LoginActivity::class.java)) // 로그아웃 시 로그인 화면 이동
-                activity?.finish() // 로그아웃시 스택에 있는 메인 액티비티 종료
-            }
 
         }
     }
