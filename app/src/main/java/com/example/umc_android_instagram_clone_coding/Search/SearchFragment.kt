@@ -46,7 +46,7 @@ class SearchFragment : Fragment() {
         val searchRVAdapter = SearchRVAdapter(searchDatas) // 더미데이터랑 Adapter 연결
         binding.searchRv.adapter = searchRVAdapter // 리사이클러뷰에 어댑터를 연결
 //        binding.searchRv.layoutManager = GridLayoutManager(context, 3)
-        binding.searchRv.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+        binding.searchRv.layoutManager = StaggeredGridLayoutManager(3, GridLayoutManager.VERTICAL)
         
         return binding.root
     }
