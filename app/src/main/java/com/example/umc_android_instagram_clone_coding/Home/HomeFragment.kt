@@ -58,11 +58,8 @@ class HomeFragment : Fragment() {
         // PostItem & Data 연결
         applyPostData()
 
-        // log-out test Button
         binding.homeAddBtn.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            (context as MainActivity).finish()
-            startActivity(Intent(activity, LoginActivity::class.java))
+
         }
 
         binding.homeHeartBtn.setOnClickListener {
@@ -70,8 +67,12 @@ class HomeFragment : Fragment() {
                 .replace(R.id.main_fl, NoticeFragment()).commitAllowingStateLoss()
         }
 
+        // log-out test Button
         binding.homeDmBtn.setOnClickListener {
-            startActivity(Intent(activity, DMActivity::class.java))
+            FirebaseAuth.getInstance().signOut()
+            (context as MainActivity).finish()
+            startActivity(Intent(activity, LoginActivity::class.java))
+            // startActivity(Intent(activity, DMActivity::class.java))
         }
 
         return binding.root
