@@ -58,7 +58,7 @@ class HomeFragment : Fragment() {
         // PostItem & Data 연결
         applyPostData()
 
-        // log-out test
+        // log-out test Button
         binding.homeAddBtn.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             (context as MainActivity).finish()
