@@ -9,9 +9,15 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.umc_android_instagram_clone_coding.Data.User
+import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupSelectBinding
 import com.google.android.material.tabs.TabLayout
+
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class SignupSelectActivity: AppCompatActivity() {
@@ -24,46 +30,7 @@ class SignupSelectActivity: AppCompatActivity() {
 
         binding = ActivitySignupSelectBinding.inflate(layoutInflater)
 
-        binding.signupSelectTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                when(tab?.position) {
-                    0 -> {
-                        binding.signupNumberFl.visibility = View.VISIBLE
-                        binding.signupEmailFl.visibility = View.GONE
-                        tabFlag = 0
-
-                        if (binding.signupNumberText.length() != 0) {
-                            binding.selectNextBtn.isClickable = true;
-                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
-                        } else {
-                            binding.selectNextBtn.isClickable = false;
-                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
-                        }
-                    }
-                    1 -> {
-                        binding.signupNumberFl.visibility = View.GONE
-                        binding.signupEmailFl.visibility = View.VISIBLE
-                        tabFlag = 1
-
-                        if (binding.signupEmailText.length() != 0) {
-                            binding.selectNextBtn.isClickable = true;
-                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
-                        } else {
-                            binding.selectNextBtn.isClickable = false;
-                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
-                        }
-                    }
-                }
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-                Log.d("SignupSelect", "Unselected")
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-                Log.d("SignupSelect", "Reselected")
-            }
-        })
+        setTabSelectedListener()
 
         binding.signupNumberText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
@@ -106,9 +73,61 @@ class SignupSelectActivity: AppCompatActivity() {
         }
 
         binding.selectNextBtn.setOnClickListener {
-            startActivity(Intent(this, SignupActivity::class.java))
+            val intent = Intent(this, SignupActivity::class.java)
+            sendSignupData(intent)
+            startActivity(intent)
         }
 
         setContentView(binding.root)
+    }
+
+    private fun setTabSelectedListener() {
+        binding.signupSelectTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                when(tab?.position) {
+                    0 -> {
+                        binding.signupNumberFl.visibility = View.VISIBLE
+                        binding.signupEmailFl.visibility = View.GONE
+                        tabFlag = 0
+
+                        if (binding.signupNumberText.length() != 0) {
+                            binding.selectNextBtn.isClickable = true;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
+                        } else {
+                            binding.selectNextBtn.isClickable = false;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
+                        }
+                    }
+                    1 -> {
+                        binding.signupNumberFl.visibility = View.GONE
+                        binding.signupEmailFl.visibility = View.VISIBLE
+                        tabFlag = 1
+
+                        if (binding.signupEmailText.length() != 0) {
+                            binding.selectNextBtn.isClickable = true;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_blue);
+                        } else {
+                            binding.selectNextBtn.isClickable = false;
+                            binding.selectNextBtn.setBackgroundResource(R.drawable.round_border_unclick_blue);
+                        }
+                    }
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                Log.d("SignupSelect", "Unselected")
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                Log.d("SignupSelect", "Reselected")
+            }
+        })
+    }
+
+    private fun sendSignupData(intent : Intent) {
+        when (tabFlag) {
+            0 -> intent.putExtra("number", binding.signupNumberText.text.toString())
+            else -> intent.putExtra("email", binding.signupEmailText.text.toString())
+        }
     }
 }
