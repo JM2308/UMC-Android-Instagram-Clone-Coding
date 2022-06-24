@@ -2,6 +2,7 @@ package com.example.umc_android_instagram_clone_coding.Home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.HomeStoryData
 import com.example.umc_android_instagram_clone_coding.Data.PostContentItem
+import com.example.umc_android_instagram_clone_coding.LoginActivity
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,10 +51,19 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        Log.d("DataCheck", "current user = " + FirebaseAuth.getInstance().currentUser)
+
         // StoryItem & Data 연결
         applyStoryData()
         // PostItem & Data 연결
         applyPostData()
+
+        // log-out test
+        binding.homeAddBtn.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            (context as MainActivity).finish()
+            startActivity(Intent(activity, LoginActivity::class.java))
+        }
 
         binding.homeHeartBtn.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()

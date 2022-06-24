@@ -1,14 +1,10 @@
 package com.example.umc_android_instagram_clone_coding
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
 import com.example.umc_android_instagram_clone_coding.Login.SignupSelectActivity
 import com.example.umc_android_instagram_clone_coding.databinding.ActivityLoginBinding
 import com.facebook.*
@@ -76,7 +72,6 @@ class LoginActivity : AppCompatActivity() {
         LoginManager.getInstance()
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult>{
                 override fun onSuccess(result: LoginResult) {  // 로그인 성공시
-
                     handleFacebookAccessToken(result?.accessToken)
                     // 파이어베이스로 로그인 데이터를 넘겨줌
                     Log.d("confirm","2")

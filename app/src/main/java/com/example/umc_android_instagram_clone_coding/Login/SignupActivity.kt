@@ -9,6 +9,7 @@ import android.util.Log
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.umc_android_instagram_clone_coding.Data.User
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupBinding
 import com.google.android.gms.tasks.OnCompleteListener
@@ -16,6 +17,8 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SignupActivity : AppCompatActivity() {
 
@@ -25,7 +28,6 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignupBinding.inflate(layoutInflater)
-
         
         setTextChangedListener()
         setClickListener()
