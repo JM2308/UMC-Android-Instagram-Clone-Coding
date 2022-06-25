@@ -15,10 +15,6 @@ import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupSelectBinding
 import com.google.android.material.tabs.TabLayout
 
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-
 
 class SignupSelectActivity: AppCompatActivity() {
 
