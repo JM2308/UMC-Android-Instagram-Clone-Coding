@@ -56,15 +56,16 @@
             android:name=".MainActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".Info.InfoEditActivity"
-            android:exported="false" />
-
         <activity android:name=".Home.PostSelectImgActivity" />
         <activity
             android:name=".Home.DMActivity"
             android:exported="true" />
+
         <activity android:name=".Shop.WishListActivity" />
+
+        <activity
+            android:name=".Info.InfoEditActivity"
+            android:exported="false" />
 
     </application>
 
