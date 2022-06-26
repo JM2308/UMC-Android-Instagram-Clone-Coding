@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1:1"
-        android:src="@drawable/img_search6"
+        android:src="@color/gray"
         android:scaleType="centerCrop"
         android:layout_marginBottom="2dp"
         android:layout_marginStart="1dp"

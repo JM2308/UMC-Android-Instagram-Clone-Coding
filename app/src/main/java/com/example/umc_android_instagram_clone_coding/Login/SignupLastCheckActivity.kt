@@ -20,7 +20,6 @@ class SignupLastCheckActivity : AppCompatActivity() {
 
     private var db = Firebase.firestore
     private lateinit var auth : FirebaseAuth
-    private lateinit var firestore : FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,18 +1,32 @@
 package com.example.umc_android_instagram_clone_coding.Home
 
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.PostSelectImg
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivityPostSelectImgBinding
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PostSelectImgActivity: AppCompatActivity() {
     lateinit var binding: ActivityPostSelectImgBinding
     private var imgDatas = ArrayList<PostSelectImg>()
+    var fbStorage : FirebaseStorage? = FirebaseStorage.getInstance()
     private var selectPosition: Int? = null
+    val gallery = 0
+    var imgUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +67,68 @@ class PostSelectImgActivity: AppCompatActivity() {
 
         binding.postSelectImgRv.layoutManager = GridLayoutManager(this,4)
 
+        binding.postImgCancelBtn.setOnClickListener {
+            finish()
+        }
+
+        binding.postSelectNextBtn.setOnClickListener {
+            val intent = Intent(this, PostWriteActivity::class.java)
+            intent.putExtra("img", imgDatas[selectPosition!!].img)
+            startActivity(intent)
+        }
+
+        binding.selectImgMultiBtn.setOnClickListener {
+            val intent = Intent()
+            intent.type = "image/*"
+            intent.action = Intent.ACTION_GET_CONTENT
+
+            startActivityForResult(Intent.createChooser(intent, "LOAD PICTURE"), gallery)
+        }
+
         setContentView(binding.root)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        Log.d("DataCheck", "Intent = " + intent.type)
+        if (requestCode == gallery) {
+            if (resultCode == RESULT_OK) {
+                imgUri = data?.data
+                try {
+                    var bitmap : Bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imgUri)
+                    binding.postSelectImg.setImageBitmap(bitmap)
+
+                    Log.d("DataCheck", "imgUri = " + imgUri.toString())
+
+                    imageUpload()
+
+                } catch (e:Exception) {
+                    Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+
+        }
+    }
+
+    private fun imageUpload(){
+        // var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        // var imgFileName = "IMAGE_" + timeStamp + "_.png"
+        // var storageRef: StorageReference = fbStorage?.reference?.child("images")?.child(imgFileName)
+        var storageRef: StorageReference = fbStorage!!.reference.child("image")
+        // var
+
+
+        // Log.d("DataCheck", "Image Upload Function Check")
+        // Log.d("DataCheck", storageRef.toString())
+
+        /*
+        storageRef?.putFile(imgUri!!)?.addOnSuccessListener {
+            Log.d("DataCheck", "ImageUploadSuccess")
+        }?.addOnFailureListener { e ->
+            Log.w("DataCheck", "ImageUploadFailed", e)
+        }
+        */
     }
 }
