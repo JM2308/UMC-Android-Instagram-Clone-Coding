@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
     android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SearchFragment">
@@ -10,57 +11,48 @@
     <FrameLayout
         android:id="@+id/search_frm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"/>
 
     /*Search Bar*/
-    <LinearLayout
-        android:id="@+id/search_search_linearlayout"
+    <EditText
+        android:id="@+id/search_searchbar_et"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/search_background"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="50dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="검색"
+        android:padding="10dp"
+        android:paddingStart="35dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:background="@drawable/search"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"/>
-
-<!--        <EditText-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="검색"-->
-<!--            android:textSize="15sp"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_marginLeft="15dp"/>-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="검색"
-            android:textSize="17sp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="15dp" />
-
-    </LinearLayout>
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@id/search_searchbar_et"
+        app:layout_constraintStart_toStartOf="@id/search_searchbar_et"
+        app:layout_constraintTop_toTopOf="@id/search_searchbar_et" />
 
     <ImageView
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:src="@drawable/map3"
+        android:src="@drawable/ic_position"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toEndOf="@id/search_search_linearlayout"
+        app:layout_constraintStart_toEndOf="@id/search_searchbar_et"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/search_search_linearlayout"
-        app:layout_constraintBottom_toBottomOf="@id/search_search_linearlayout"/>
+        app:layout_constraintTop_toTopOf="@id/search_searchbar_et"
+        app:layout_constraintBottom_toBottomOf="@id/search_searchbar_et"/>
+
 
     /*리사이클러뷰*/
     <androidx.recyclerview.widget.RecyclerView
@@ -73,6 +65,6 @@
         tools:layout_editor_absoluteX="0dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_search_linearlayout"/>
+        app:layout_constraintTop_toBottomOf="@id/search_searchbar_et"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

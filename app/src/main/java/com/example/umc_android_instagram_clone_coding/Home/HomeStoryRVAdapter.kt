@@ -9,6 +9,16 @@ import com.example.umc_android_instagram_clone_coding.databinding.ItemStoryBindi
 
 class HomeStoryRVAdapter(private var homeStoryList: ArrayList<HomeStoryData>) : RecyclerView.Adapter<HomeStoryRVAdapter.ViewHolder>() {
 
+    //아이템 클릭
+    interface MyItemClickListener{
+        fun onItemClick()
+    }
+
+    private lateinit var mItemClickListener: MyItemClickListener
+    fun setMyItemClickListener(itemClickListener: MyItemClickListener){
+        mItemClickListener = itemClickListener
+    }
+
     override fun getItemCount(): Int = homeStoryList.size
 
     override fun onCreateViewHolder(
@@ -21,6 +31,7 @@ class HomeStoryRVAdapter(private var homeStoryList: ArrayList<HomeStoryData>) : 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(homeStoryList[position])
+        holder.itemView.setOnClickListener { mItemClickListener.onItemClick() } //아이템 클릭 함수 호출
     }
 
     inner class ViewHolder(val binding: ItemStoryBinding): RecyclerView.ViewHolder(binding.root) {
