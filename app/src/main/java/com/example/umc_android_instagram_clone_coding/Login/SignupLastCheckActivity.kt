@@ -28,12 +28,14 @@ class SignupLastCheckActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        binding.signupCheckSignupBtn.setOnClickListener {
-            val number = intent.getStringExtra("number")
-            val email = intent.getStringExtra("email")
-            val name = intent.getStringExtra("name")
-            val pwd = intent.getStringExtra("pwd")
+        val number = intent.getStringExtra("number")
+        val email = intent.getStringExtra("email")
+        val name = intent.getStringExtra("name")
+        val pwd = intent.getStringExtra("pwd")
 
+        binding.signupLastCheckTv.text = "${name}님으로\n가입하시겠어요?"
+
+        binding.signupCheckSignupBtn.setOnClickListener {
             if (pwd != null) {
                 Log.d("SignupActivityData", pwd)
                 signup(number, email, name, pwd)
@@ -76,6 +78,7 @@ class SignupLastCheckActivity : AppCompatActivity() {
         userInfo.uid = auth?.uid
         userInfo.email = auth?.currentUser?.email
         userInfo.name = name
+        userInfo.realname = null
         userInfo.pwd = pwd
         userInfo.profileImg = 0
         userInfo.follower = null
