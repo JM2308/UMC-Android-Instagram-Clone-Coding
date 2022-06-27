@@ -24,9 +24,9 @@ class PostWriteActivity: AppCompatActivity() {
 
         binding = ActivityPostWriteBinding.inflate(layoutInflater)
 
-        val image = intent.getIntExtra("img", 0)
+        val image = intent.getStringExtra("img")
 
-        binding.postWriteSelectImg.setImageResource(image)
+        // binding.postWriteSelectImg.setImageResource(image)
 
         binding.postWriteBackBtn.setOnClickListener {
             finish()

@@ -1,7 +1,9 @@
 package com.example.umc_android_instagram_clone_coding.Home
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -16,6 +18,7 @@ import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.ActivityPostSelectImgBinding
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -27,6 +30,7 @@ class PostSelectImgActivity: AppCompatActivity() {
     private var selectPosition: Int? = null
     val gallery = 0
     var imgUri: Uri? = null
+    private var selectImg = String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,9 @@ class PostSelectImgActivity: AppCompatActivity() {
                 // 상단 ImageView에 선택한 이미지 띄우기
                 binding.postSelectImg.setImageResource(img.img!!)
 
+                // selectImg = binding.postSelectImg.resources.toString()
+                Log.d("DataCheck", binding.postSelectImg.resources.toString())
+
                 // 선택 해제된 이미지 투명도 상태 원래대로
                 if (selectPosition != null)
                     binding.postSelectImgRv[selectPosition!!].alpha = 1F
@@ -73,7 +80,10 @@ class PostSelectImgActivity: AppCompatActivity() {
 
         binding.postSelectNextBtn.setOnClickListener {
             val intent = Intent(this, PostWriteActivity::class.java)
-            intent.putExtra("img", imgDatas[selectPosition!!].img)
+
+            Log.d("DataCheck", "Image Position = $selectPosition")
+            Log.d("DataCheck", "Resource Test = " + binding.postSelectImg.context.resources.toString().toInt())
+
             startActivity(intent)
         }
 
@@ -101,8 +111,6 @@ class PostSelectImgActivity: AppCompatActivity() {
 
                     Log.d("DataCheck", "imgUri = " + imgUri.toString())
 
-                    imageUpload()
-
                 } catch (e:Exception) {
                     Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
                 }
@@ -110,23 +118,5 @@ class PostSelectImgActivity: AppCompatActivity() {
         } else {
 
         }
-    }
-
-    private fun imageUpload() {
-        // var timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        // var imgFileName = "IMAGE_" + timeStamp + "_.png"
-        // var storageRef: StorageReference = fbStorage?.reference?.child("images")?.child(imgFileName)
-        var storageRef: StorageReference = fbStorage!!.reference.child("image")
-
-        // Log.d("DataCheck", "Image Upload Function Check")
-        // Log.d("DataCheck", storageRef.toString())
-
-        /*
-        storageRef?.putFile(imgUri!!)?.addOnSuccessListener {
-            Log.d("DataCheck", "ImageUploadSuccess")
-        }?.addOnFailureListener { e ->
-            Log.w("DataCheck", "ImageUploadFailed", e)
-        }
-        */
     }
 }
