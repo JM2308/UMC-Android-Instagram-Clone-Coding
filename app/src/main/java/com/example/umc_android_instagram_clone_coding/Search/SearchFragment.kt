@@ -45,7 +45,7 @@ class SearchFragment : Fragment() {
 
         val searchRVAdapter = SearchRVAdapter(searchDatas)
         binding.searchRv.adapter = searchRVAdapter
-        binding.searchRv.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
+        binding.searchRv.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
         
         return binding.root
     }
