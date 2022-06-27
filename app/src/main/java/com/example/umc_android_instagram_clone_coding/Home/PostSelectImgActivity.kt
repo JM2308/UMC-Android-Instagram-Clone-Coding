@@ -117,7 +117,6 @@ class PostSelectImgActivity: AppCompatActivity() {
         // var imgFileName = "IMAGE_" + timeStamp + "_.png"
         // var storageRef: StorageReference = fbStorage?.reference?.child("images")?.child(imgFileName)
         var storageRef: StorageReference = fbStorage!!.reference.child("image")
-        // var
 
         // Log.d("DataCheck", "Image Upload Function Check")
         // Log.d("DataCheck", storageRef.toString())
