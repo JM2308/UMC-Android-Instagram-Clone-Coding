@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.umc_android_instagram_clone_coding.Login.LoginActivity
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySplashBinding
 
 class SplashActivity: AppCompatActivity() {
@@ -20,7 +21,7 @@ class SplashActivity: AppCompatActivity() {
         val handler = Handler(Looper.getMainLooper())
 
         handler.postDelayed({
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }, 1000)
     }

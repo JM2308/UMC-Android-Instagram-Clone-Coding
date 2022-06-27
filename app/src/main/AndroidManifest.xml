@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".Login.LoginActivity"/>
         <activity android:name=".Login.SignupAgreeActivity" />
         <activity android:name=".Login.SignupBirthdayActivity" />
         <activity android:name=".Login.SignupActivity" />

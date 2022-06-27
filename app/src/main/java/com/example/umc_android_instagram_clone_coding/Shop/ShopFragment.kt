@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.Shop
-import com.example.umc_android_instagram_clone_coding.LoginActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentShopBinding
 

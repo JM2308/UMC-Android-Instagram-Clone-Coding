@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.HomeStoryData
 import com.example.umc_android_instagram_clone_coding.Data.PostContentItem
-import com.example.umc_android_instagram_clone_coding.LoginActivity
+import com.example.umc_android_instagram_clone_coding.Login.LoginActivity
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeBinding

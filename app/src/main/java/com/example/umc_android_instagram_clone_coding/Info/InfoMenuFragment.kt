@@ -5,14 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.umc_android_instagram_clone_coding.LoginActivity
+import com.example.umc_android_instagram_clone_coding.Login.LoginActivity
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentInfoMenuBinding
-import com.facebook.AccessToken
-import com.facebook.login.LoginManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.ktx.Firebase
 
 
 class InfoMenuFragment : BottomSheetDialogFragment() {

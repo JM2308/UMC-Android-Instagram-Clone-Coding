@@ -4,13 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import com.example.umc_android_instagram_clone_coding.Data.User
-import com.example.umc_android_instagram_clone_coding.LoginActivity
-import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.databinding.ActivitySignupLastCheckBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
