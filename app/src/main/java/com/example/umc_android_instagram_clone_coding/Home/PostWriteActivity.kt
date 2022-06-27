@@ -1,7 +1,9 @@
 package com.example.umc_android_instagram_clone_coding.Home
 
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,15 +20,21 @@ class PostWriteActivity: AppCompatActivity() {
     lateinit var binding: ActivityPostWriteBinding
     private var db = Firebase.firestore
     private lateinit var auth : FirebaseAuth
+    var imgUri: Uri? = null
+    var bitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityPostWriteBinding.inflate(layoutInflater)
 
-        val image = intent.getStringExtra("img")
+        // 받은 image uri string을 uri로 변환
+        imgUri = Uri.parse(intent.getStringExtra("img"))
+        Log.d("DataCheck", imgUri.toString())
 
-        // binding.postWriteSelectImg.setImageResource(image)
+        // 변환시킨 uri를 통해 이미지 적용
+        bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imgUri)
+        binding.postWriteSelectImg.setImageBitmap(bitmap)
 
         binding.postWriteBackBtn.setOnClickListener {
             finish()
@@ -35,11 +43,10 @@ class PostWriteActivity: AppCompatActivity() {
         binding.postWriteUploadBtn.setOnClickListener {
             // 데이터 저장해주는 부분
             val content = binding.postWriteContent.text
-            val img = image
 
             val data = hashMapOf(
                 "content" to content,
-                "img" to img
+                // "img" to img
             )
 
             Log.d("DataSaveCheck", data.toString())

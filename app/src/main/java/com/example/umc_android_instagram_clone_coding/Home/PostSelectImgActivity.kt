@@ -81,8 +81,9 @@ class PostSelectImgActivity: AppCompatActivity() {
         binding.postSelectNextBtn.setOnClickListener {
             val intent = Intent(this, PostWriteActivity::class.java)
 
-            Log.d("DataCheck", "Image Position = $selectPosition")
-            Log.d("DataCheck", "Resource Test = " + binding.postSelectImg.context.resources.toString().toInt())
+            Log.d("DataCheck", "Send Image Uri = " + imgUri)
+
+            intent.putExtra("img", imgUri.toString())
 
             startActivity(intent)
         }
