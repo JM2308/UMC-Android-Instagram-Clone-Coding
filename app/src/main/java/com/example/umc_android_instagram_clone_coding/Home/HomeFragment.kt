@@ -10,11 +10,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.HomeStoryData
 import com.example.umc_android_instagram_clone_coding.Data.PostContentItem
-import com.example.umc_android_instagram_clone_coding.Info.InfoFollowFragment
 import com.example.umc_android_instagram_clone_coding.LoginActivity
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
-import com.example.umc_android_instagram_clone_coding.Search.SearchAccountRVAdapter
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -117,14 +115,12 @@ class HomeFragment : Fragment() {
             add(HomeStoryData("example5", R.drawable.profile, -1))
         }
 
-        // story 리사이클러뷰 아이템 클릭 전환
-        storyAdapter.setMyItemClickListener(object: HomeStoryRVAdapter.MyItemClickListener{
-            override fun onItemClick() {
-                (context as MainActivity).supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_fl, HomeStoryFragment())
-                    .commitAllowingStateLoss()
-            }
-        })
+//        // story 리사이클러뷰 아이템 클릭 전환
+//        storyAdapter.setMyItemClickListener(object: HomeStoryRVAdapter.MyItemClickListener{
+//            override fun onItemClick() {
+//                startActivity(Intent(activity, StoryActivity::class.java))
+//            }
+//        })
     }
 
     private fun applyPostData() {

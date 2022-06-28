@@ -1,7 +1,10 @@
 package com.example.umc_android_instagram_clone_coding.Home
 
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umc_android_instagram_clone_coding.Data.HomeStoryData
 import com.example.umc_android_instagram_clone_coding.R
@@ -31,8 +34,13 @@ class HomeStoryRVAdapter(private var homeStoryList: ArrayList<HomeStoryData>) : 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(homeStoryList[position])
-        holder.itemView.setOnClickListener { mItemClickListener.onItemClick() } //아이템 클릭 함수 호출
+//        holder.itemView.setOnClickListener { mItemClickListener.onItemClick() }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView?.context, StoryActivity::class.java)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        } //아이템 클릭 함수 호출
     }
+
 
     inner class ViewHolder(val binding: ItemStoryBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(story: HomeStoryData) {

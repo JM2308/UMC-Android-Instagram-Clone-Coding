@@ -44,7 +44,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".LoginActivity"/>
         <activity android:name=".Login.SignupAgreeActivity" />
         <activity android:name=".Login.SignupBirthdayActivity" />
@@ -60,10 +59,12 @@
             android:name=".Info.InfoEditActivity"
             android:exported="false" />
 
+        <activity android:name=".Home.StoryActivity"/>
         <activity
             android:name=".Home.DMActivity"
             android:exported="true" />
         <activity android:name=".Shop.WishListActivity" />
+        <activity android:name=".Search.SearchBestActivity"/>
 
     </application>
 
