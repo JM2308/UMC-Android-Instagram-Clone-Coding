@@ -74,14 +74,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/info_profile_iv"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/info"
-        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/info_tool_bar" />
 
@@ -99,6 +98,7 @@
         android:id="@+id/info_intro_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:textColor="@color/black"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/info_name_tv"
