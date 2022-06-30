@@ -42,7 +42,7 @@
             android:textSize="14sp"
             android:background="@drawable/rounded_corner_gray"
             android:hint="전화번호, 사용자 이름 또는 이메일"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:layout_marginTop="20dp"
             android:padding="10dp"/>
 

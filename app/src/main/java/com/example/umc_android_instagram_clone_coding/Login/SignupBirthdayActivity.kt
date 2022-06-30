@@ -32,7 +32,6 @@ class SignupBirthdayActivity: AppCompatActivity() {
             intent.putExtra("email", email)
             intent.putExtra("name", name)
             intent.putExtra("pwd", pwd)
-
             startActivity(intent)
         }
 
