@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/standard_bottom_sheet"
+    style="?attr/bottomSheetStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <!--        이거 안 쓰는 걸로...-->
+
+                /*Search Bar*/
+                <EditText
+                    android:id="@+id/search_popup_searchbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/search_background"
+                    android:hint="검색"
+                    android:padding="10dp"
+                    android:paddingStart="35dp"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/search"
+                    app:layout_constraintBottom_toBottomOf="@id/search_popup_searchbar"
+                    app:layout_constraintStart_toStartOf="@id/search_popup_searchbar"
+                    app:layout_constraintTop_toTopOf="@id/search_popup_searchbar" />
+
+                <TextView
+                    android:id="@+id/search_popup_cancel_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="취소"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/search_popup_searchbar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/search_popup_searchbar"
+                    app:layout_constraintTop_toTopOf="@id/search_popup_searchbar" />
+
+                <View
+                    android:id="@+id/search_popup_underscore_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="10dp"
+                    android:background="#a8a8a8"
+                    app:layout_constraintTop_toBottomOf="@id/search_popup_searchbar" />
+
+                <TextView
+                    android:id="@+id/search_popup_recentsearch_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="최근 검색"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/search_popup_searchbar"
+                    app:layout_constraintTop_toBottomOf="@id/search_popup_underscore_view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="모두 보기"
+                    android:textColor="#4DA2FF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/search_popup_recentsearch_iv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/search_popup_recentsearch_iv" />
+
+                /* 리사이클러뷰 */
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_popup_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/search_popup_recentsearch_iv"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:listitem="@layout/item_search_account" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
