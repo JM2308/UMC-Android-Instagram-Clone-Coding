@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    //배경
+    <View
+        android:id="@+id/reels_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    //스토리 이미지
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/img_search9"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/story_bottom_ll"/>
+
+    <LinearLayout
+        android:id="@+id/story_top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/story_cover_img_cardView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageView
+                android:id="@+id/story_user_profile_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/info"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/story_userID_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="example_ID"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/story_hour_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:text="00시간"
+            android:textColor="#DCFFFFFF"
+            android:textSize="14sp"
+            android:layout_marginStart="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/story_top_ll"
+        app:layout_constraintBottom_toBottomOf="@id/story_top_ll">
+
+        <ImageView
+            android:id="@+id/story_more_iv"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/more_white_horizontal"/>
+
+        <ImageView
+            android:id="@+id/story_close_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/info_edit_close"
+            android:backgroundTint="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/story_bottom_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/story_message_et"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_transparent_gray"
+            android:hint="메시지 보내기"
+            android:textColorHint="@color/white"
+            android:padding="10dp"/>
+
+        <ImageView
+            android:id="@+id/story_heart_iv"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/heart_white"/>
+
+        <ImageView
+            android:id="@+id/story_share_iv"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/share_white"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
