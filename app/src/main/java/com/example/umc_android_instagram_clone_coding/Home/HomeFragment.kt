@@ -115,6 +115,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun applyStoryData() {
+
         // story에 들어갈 데이터와 RV 연결하기 위한 Adapter 적용
         val storyAdapter = HomeStoryRVAdapter(storyDatas)
         binding.homeStoryRv.adapter = storyAdapter
@@ -129,6 +130,13 @@ class HomeFragment : Fragment() {
             add(HomeStoryData("example4", R.drawable.profile, -1))
             add(HomeStoryData("example5", R.drawable.profile, -1))
         }
+
+//        // story 리사이클러뷰 아이템 클릭 전환
+//        storyAdapter.setMyItemClickListener(object: HomeStoryRVAdapter.MyItemClickListener{
+//            override fun onItemClick() {
+//                startActivity(Intent(activity, StoryActivity::class.java))
+//            }
+//        })
     }
 
     private fun applyPostData() {

@@ -82,7 +82,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:layout_marginEnd="15dp"
             app:layout_constraintTop_toBottomOf="@id/shop_search"
             app:layout_constraintStart_toStartOf="@id/shop_search">
 
@@ -170,7 +170,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:layout_editor_absoluteX="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/shop_scrollview"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shop_scrollview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

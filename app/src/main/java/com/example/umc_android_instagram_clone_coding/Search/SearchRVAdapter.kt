@@ -27,8 +27,8 @@ class SearchRVAdapter(private val searchList: ArrayList<Search>): RecyclerView.A
 
             if (search.feedstatus == 0) //사진이 여러개인 경우
                 binding.itemSearchIconIv.visibility = View.VISIBLE
-            else if(search.feedstatus == 1) //게시물이 릴스인 경우
-                binding.itemSearchReelsIconIv.visibility = View.VISIBLE
+//            else if(search.feedstatus == 1) //게시물이 릴스인 경우
+//                binding.itemSearchReelsIconIv.visibility = View.VISIBLE
         }
     }
 }

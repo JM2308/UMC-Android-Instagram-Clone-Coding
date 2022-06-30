@@ -26,7 +26,6 @@ class ShopFragment : Fragment() {
         /* 클릭시 위시리시트로 전환 */
         binding.shopWishlistKeepIv.setOnClickListener {
             startActivity(Intent(activity, WishListActivity::class.java))
-//            startActivity(Intent(activity, LoginActivity::class.java))
         }
 
         // 데이터 리스트 생성 더미 데이터 (arraylist에 담길 데이터)
