@@ -1,6 +1,7 @@
 package com.example.umc_android_instagram_clone_coding.Info
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,23 +10,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.res.ResourcesCompat
+import com.bumptech.glide.Glide
 import com.example.umc_android_instagram_clone_coding.Data.User
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentInfoBinding
+import com.facebook.FacebookSdk.getApplicationContext
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class InfoFragment : Fragment() {
     private var _binding: FragmentInfoBinding? = null
     private val binding get() = _binding!!
 
-    private var firestore : FirebaseFirestore? = null
-    private var uid : String? = null
+    private var firestore: FirebaseFirestore? = null
+    private var uid: String? = null
     private lateinit var documentId: String
+    private var storage: FirebaseStorage? = null
 
     private val tabIconArray = arrayOf(
         R.drawable.info_feed_tab,
@@ -47,6 +53,16 @@ class InfoFragment : Fragment() {
 
         uid = FirebaseAuth.getInstance().currentUser?.uid  // 유저 고유 아이디 초기화
         firestore = FirebaseFirestore.getInstance()  // 파이어베이스 파이어스토어 db 가져오기
+        storage = FirebaseStorage.getInstance("gs://umc-instagram.appspot.com")
+
+        val storageRef = storage!!.reference
+
+        storageRef.child("images/${uid}").downloadUrl.addOnSuccessListener {
+            Glide.with(getApplicationContext())
+                .load(it)
+                .into(binding.infoProfileIv)
+        }
+
 
         val db = firestore?.collection("User")
         db?.whereEqualTo("uid", uid) // uid가 현재 로그인한 uid랑 같은 문서 찾기
@@ -56,7 +72,7 @@ class InfoFragment : Fragment() {
                     for (dc in it.result!!.documents) {
                         val user = dc.toObject(User::class.java)
 
-                            binding.infoIdTv.text = user?.name // 유저 닉네임
+                        binding.infoIdTv.text = user?.name // 유저 닉네임
 
                         binding.infoNameTv.text = user?.realname
                         if (binding.infoNameTv.text != null && binding.infoNameTv.text != "") {  // 빈칸이 아니면 본명 비지블맨
@@ -82,7 +98,7 @@ class InfoFragment : Fragment() {
                         if (user?.follower != null)  // 팔로워가 한 명이라도 있으면 숫자 카운팅
                             binding.infoNumberOfFollowerTv.text = user?.follower?.size.toString()
                         if (user?.following != null)  // 팔로잉가 한 명이라도 있으면 숫자 카운팅
-                           binding.infoNumberOfFollowingTv.text = user?.following?.size.toString()
+                            binding.infoNumberOfFollowingTv.text = user?.following?.size.toString()
                     }
                 }
             }
@@ -118,4 +134,5 @@ class InfoFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
