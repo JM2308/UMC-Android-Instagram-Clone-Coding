@@ -26,7 +26,6 @@ import kotlin.collections.ArrayList
 class PostSelectImgActivity: AppCompatActivity() {
     lateinit var binding: ActivityPostSelectImgBinding
     private var imgDatas = ArrayList<PostSelectImg>()
-    var fbStorage : FirebaseStorage? = FirebaseStorage.getInstance()
     private var selectPosition: Int? = null
     val gallery = 0
     var imgUri: Uri? = null
@@ -48,16 +47,13 @@ class PostSelectImgActivity: AppCompatActivity() {
             add(PostSelectImg(R.drawable.img_shop3))
         }
 
-        val postSelectAdapter = PostSelectImgRVAdapter(imgDatas) // 더미데이터랑 Adapter 연결
-        binding.postSelectImgRv.adapter = postSelectAdapter // 리사이클러뷰에 어댑터를 연결
+        val postSelectAdapter = PostSelectImgRVAdapter(imgDatas)
+        binding.postSelectImgRv.adapter = postSelectAdapter
 
         postSelectAdapter.setMyItemClickListener(object : PostSelectImgRVAdapter.ItemClickListener{
             override fun getClickItem(img: PostSelectImg, position: Int) {
                 // 상단 ImageView에 선택한 이미지 띄우기
                 binding.postSelectImg.setImageResource(img.img!!)
-
-                // selectImg = binding.postSelectImg.resources.toString()
-                Log.d("DataCheck", binding.postSelectImg.resources.toString())
 
                 // 선택 해제된 이미지 투명도 상태 원래대로
                 if (selectPosition != null)
@@ -66,9 +62,6 @@ class PostSelectImgActivity: AppCompatActivity() {
                 // 새로 선택한 이미지 투명도 적용
                 binding.postSelectImgRv[position].alpha = 0.5F
                 selectPosition = position
-
-                Log.d("ItemClickCheck", "Activity Item Click Check")
-                Log.d("ItemClickCheck", "Click Img = " + binding.postSelectImgRv.get(position))
             }
         })
 
@@ -80,11 +73,7 @@ class PostSelectImgActivity: AppCompatActivity() {
 
         binding.postSelectNextBtn.setOnClickListener {
             val intent = Intent(this, PostWriteActivity::class.java)
-
-            Log.d("DataCheck", "Send Image Uri = " + imgUri)
-
             intent.putExtra("img", imgUri.toString())
-
             startActivity(intent)
         }
 
@@ -93,7 +82,7 @@ class PostSelectImgActivity: AppCompatActivity() {
             intent.type = "image/*"
             intent.action = Intent.ACTION_GET_CONTENT
 
-            startActivityForResult(Intent.createChooser(intent, "LOAD PICTURE"), gallery)
+            startActivityForResult(intent, gallery)
         }
 
         setContentView(binding.root)
@@ -102,22 +91,15 @@ class PostSelectImgActivity: AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        Log.d("DataCheck", "Intent = " + intent.type)
         if (requestCode == gallery) {
             if (resultCode == RESULT_OK) {
                 imgUri = data?.data
                 try {
-                    var bitmap : Bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imgUri)
-                    binding.postSelectImg.setImageBitmap(bitmap)
-
-                    Log.d("DataCheck", "imgUri = " + imgUri.toString())
-
+                    binding.postSelectImg.setImageURI(imgUri)
                 } catch (e:Exception) {
                     Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
                 }
             }
-        } else {
-
         }
     }
 }
