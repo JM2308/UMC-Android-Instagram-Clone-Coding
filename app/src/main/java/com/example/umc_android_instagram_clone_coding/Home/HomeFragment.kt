@@ -69,10 +69,7 @@ class HomeFragment : Fragment() {
 
         // log-out test Button
         binding.homeDmBtn.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            (context as MainActivity).finish()
-            startActivity(Intent(activity, LoginActivity::class.java))
-            // startActivity(Intent(activity, DMActivity::class.java))
+            startActivity(Intent(context, DMActivity::class.java))
         }
 
         return binding.root
