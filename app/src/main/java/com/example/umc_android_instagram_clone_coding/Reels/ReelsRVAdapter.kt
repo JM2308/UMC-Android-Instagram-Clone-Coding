@@ -24,6 +24,8 @@ class ReelsRVAdapter(private val reelsList: ArrayList<Reels>): RecyclerView.Adap
             binding.itemReelsUserIDTv.text = reels.userId
             binding.itemReelsTitle.text = reels.title
             binding.itemReelsUserProfileIv.setImageResource(reels.profileImg!!)
+            binding.itemReelsHeartSizeTv.text = reels.likes
+            binding.itemReelsChatSizeTv.text = reels.chat
         }
     }
 }
