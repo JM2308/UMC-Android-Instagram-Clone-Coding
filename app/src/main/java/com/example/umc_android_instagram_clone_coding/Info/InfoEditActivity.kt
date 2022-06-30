@@ -54,6 +54,9 @@ class InfoEditActivity : AppCompatActivity() {
         val db = firestore?.collection("User")
         val setting = mutableMapOf<String, Any>()
 
+        Log.d("DataSaveCheck", "Uid = " + uid.toString())
+        Log.d("DataSaveCheck", "Equal Uid = " + db?.whereEqualTo("uid", uid)?.get().toString())
+
         db?.whereEqualTo("uid", uid) // uid가 현재 로그인한 uid랑 같은 문서 찾기
             ?.get()
             ?.addOnCompleteListener {

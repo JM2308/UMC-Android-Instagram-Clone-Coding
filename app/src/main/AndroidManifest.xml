@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 앨범 접근 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -46,7 +47,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
+
+        <activity android:name=".Login.LoginActivity"/>
         <activity android:name=".Login.SignupAgreeActivity" />
         <activity android:name=".Login.SignupBirthdayActivity" />
         <activity android:name=".Login.SignupActivity" />
@@ -62,9 +64,12 @@
             android:exported="false" />
 
         <activity android:name=".Home.StoryActivity"/>
+        <activity android:name=".Home.PostSelectImgActivity" />
+        <activity android:name=".Home.PostWriteActivity" />
         <activity
             android:name=".Home.DMActivity"
             android:exported="true" />
+
         <activity android:name=".Shop.WishListActivity" />
         <activity android:name=".Search.SearchBestActivity"/>
 

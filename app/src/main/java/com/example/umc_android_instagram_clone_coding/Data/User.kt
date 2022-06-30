@@ -14,6 +14,6 @@ data class User(
     var following: Array<String>? = arrayOf(),
     var followReceive: Array<String>? = arrayOf(),
     var followSend: Array<String>? = arrayOf(),
-    var post: HashMap<String, HashMap<Int, Any>>? = hashMapOf(),
-    var story: HashMap<String, HashMap<Int, Any>>? = hashMapOf()
+    var post: HashMap<String, Any>? = hashMapOf(),
+    var story: HashMap<String, Any>? = hashMapOf()
 )

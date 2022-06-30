@@ -165,6 +165,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:overScrollMode="never"
+        android:layout_marginTop="5dp"
         tools:listitem="@layout/item_shop"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:layout_editor_absoluteX="0dp"

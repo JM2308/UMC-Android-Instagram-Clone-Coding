@@ -3,18 +3,19 @@ package com.example.umc_android_instagram_clone_coding.Home
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.*
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_android_instagram_clone_coding.Data.HomeStoryData
 import com.example.umc_android_instagram_clone_coding.Data.PostContentItem
-import com.example.umc_android_instagram_clone_coding.LoginActivity
+import com.example.umc_android_instagram_clone_coding.Login.LoginActivity
 import com.example.umc_android_instagram_clone_coding.MainActivity
 import com.example.umc_android_instagram_clone_coding.R
 import com.example.umc_android_instagram_clone_coding.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,7 +60,22 @@ class HomeFragment : Fragment() {
         applyPostData()
 
         binding.homeAddBtn.setOnClickListener {
-
+            var popupMenu = PopupMenu(context, it)
+            popupMenu.menuInflater.inflate(R.menu.home_add_btn_menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem ->
+                if (menuItem.itemId === R.id.post) {
+                    // Toast.makeText(activity, "게시물 클릭", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(activity, PostSelectImgActivity::class.java))
+                } else if (menuItem.itemId === R.id.story) {
+                    Toast.makeText(activity, "스토리 클릭", Toast.LENGTH_SHORT).show()
+                } else if (menuItem.itemId === R.id.reels) {
+                    Toast.makeText(activity, "릴스 클릭", Toast.LENGTH_SHORT).show()
+                }  else {
+                    Toast.makeText(activity, "라이브 클릭", Toast.LENGTH_SHORT).show()
+                }
+                false
+            }
+            popupMenu.show()
         }
 
         binding.homeHeartBtn.setOnClickListener {
